@@ -1,0 +1,30 @@
+Applied this policy to the bucket A and B to access the images through the URL
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicReadAccessToAllObjects",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/*"
+    }
+  ]
+}
+
+or if you want to access objects through your account only use this :
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAccessOnlyToMyAccount",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::your acct number:root"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/*"
+    }
+  ]
+}
