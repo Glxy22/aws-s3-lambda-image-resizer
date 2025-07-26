@@ -1,0 +1,15 @@
+
+## 🔨 How the Lambda Function Works
+
+- Triggered on `PUT` events from S3 Bucket A
+- Resizes uploaded image to 300x300 pixels
+- Stores result in S3 Bucket B with prefix `resized-`
+
+## 📦 Lambda Layer Notes
+
+Pillow was installed on an Amazon Linux 2023 EC2 instance to ensure compatibility with Lambda Python 3.12 runtime.
+
+```bash
+mkdir -p python/lib/python3.12/site-packages
+python3.12 -m pip install pillow -t python/lib/python3.12/site-packages/
+zip -r9 pillow-layer-python312.zip python
