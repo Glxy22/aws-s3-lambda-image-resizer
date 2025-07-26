@@ -1,4 +1,4 @@
-# aws-s3-lambda-image-resizer
+**# aws-s3-lambda-image-resizer**
 This project implements a serverless image resizing pipeline using **AWS Lambda**, **S3**, and **Python**.
 
 ## ✅ Project Overview
@@ -16,5 +16,14 @@ This project implements a serverless image resizing pipeline using **AWS Lambda*
 - Lambda Layer for Pillow (built on Amazon Linux 2023)
 - Python + Pillow
 - IAM (Lambda execution role with S3 access)
+  
+**Highlights**
+100% cloud-native workflow
+Solves common Lambda packaging issue with Pillow (_imaging import error)
+Demonstrates AWS automation, event-driven design, and real use of IAM/S3/Lambda
 
-## 🗂️ Project Structure
+**🧪 Test Results**
+Uploaded test.jpg to Bucket A
+✔️ Resized image resized-test.jpg appeared in Bucket B
+
+
